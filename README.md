@@ -48,22 +48,25 @@ The table below records the results from the current notebook run.
 
 Given a clean image `x` and Gaussian noise `eps`, the notebook constructs a noisy input:
 
-```text
-z_t = t * x + (1 - t) * eps
-```
+$$
+z_t = t x + (1-t)\epsilon
+$$
 
 The model predicts the clean image:
 
-```text
-x_hat = f_theta(z_t, t)
-```
+$$
+\hat{x} = f_\theta(z_t, t)
+$$
 
 The implementation derives a velocity estimate and target using a denominator clamp:
 
-```text
-v_hat = (x_hat - z_t) / max(1 - t, 0.05)
-v     = (x - z_t) / max(1 - t, 0.05)
-```
+$$
+\hat{v} = \frac{\hat{x}-z_t}{\max(1-t,\,0.05)}
+$$
+
+$$
+v = \frac{x-z_t}{\max(1-t,\,0.05)}
+$$
 
 Training minimizes mean-squared error between the predicted and target velocity values. See the notebook for the exact implementation details.
 
