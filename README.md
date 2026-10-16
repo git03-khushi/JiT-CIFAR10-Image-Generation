@@ -117,14 +117,6 @@ Because the dataset, model scale, training setup, and metrics differ, the values
 - Generated samples may be blurry or lack detail
 - No standardized FID evaluation in the current experiment
 
-## Future Work
-
-- Train for more epochs
-- Repeat experiments with multiple random seeds
-- Report mean and standard deviation
-- Save and compare fixed-seed sample grids
-- Evaluate generated samples with a documented FID protocol
-- Improve training and sampling configurations
 
 ## Reference
 
